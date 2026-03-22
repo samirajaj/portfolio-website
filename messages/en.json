@@ -2,5 +2,10 @@
   "Metadata": {
     "title": "Portfolio",
     "description": "A personal portfolio showcasing projects, experiences, and creative work, providing an overview of skills, interests, and professional journey."
+  },
+  "Theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
   }
 }
