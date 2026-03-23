@@ -1,11 +1,28 @@
 {
   "Metadata": {
     "title": "Portfolio",
-    "description": "A personal portfolio showcasing projects, experiences, and creative work, providing an overview of skills, interests, and professional journey."
+    "template": "%s | Portfolio",
+    "description": "A personal portfolio showcasing projects, experiences, and creative work, providing an overview of skills, interests, and professional journey.",
+    "login": {
+      "title": "Login"
+    },
+    "dashboard": {
+      "title": "Dashboard"
+    }
   },
   "Theme": {
     "light": "Light",
     "dark": "Dark",
     "system": "System"
+  },
+  "LoginForm": {
+    "title": "Login",
+    "description": "Log in to access the dashboard page.",
+    "password": "Password",
+    "passwordMin": "Password must be at least 3 characters.",
+    "passwordMax": "Password must be at most 128 characters.",
+    "passwordDescription": "You cannot change your password if you forget it.",
+    "submit": "Submit",
+    "reset": "Reset"
   }
 }

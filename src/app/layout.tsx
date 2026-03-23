@@ -6,6 +6,7 @@ import { resolve } from "@/i18n/locale";
 import { getTranslations } from "next-intl/server";
 import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
+import { Toaster } from "sonner";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -21,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "Metadata" });
 
   return {
-    title: { default: t("title"), template: `%s | ${t("title")}` },
+    title: { default: t("title"), template: t("template") },
     description: t("description"),
   };
 }
@@ -39,6 +40,7 @@ export default async function RootLayout({
     <html
       lang={locale}
       dir={dir}
+      suppressHydrationWarning
       className={cn(
         jetbrainsMono.variable,
         notoSansArabic.variable,
@@ -55,6 +57,7 @@ export default async function RootLayout({
             disableTransitionOnChange
           >
             {children}
+            <Toaster />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
