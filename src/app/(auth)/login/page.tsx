@@ -1,7 +1,7 @@
-import { LoginForm } from "@/components/forms/login-form";
-import { resolve } from "@/i18n/locale";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { resolve } from "@/i18n/locale";
+import { LoginForm } from "@/components/forms/login-form";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await resolve();

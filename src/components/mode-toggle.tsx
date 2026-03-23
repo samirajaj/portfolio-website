@@ -1,9 +1,8 @@
 "use client";
 
-import * as React from "react";
 import { RiMoonFill, RiSunFill } from "@remixicon/react";
+import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
-
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -11,7 +10,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useTranslations } from "next-intl";
 
 const THEMES = ["light", "dark", "system"] as const;
 

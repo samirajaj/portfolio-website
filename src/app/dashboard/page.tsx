@@ -1,7 +1,7 @@
-import { resolve } from "@/i18n/locale";
 import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
 import { unauthorized } from "next/navigation";
+import { getTranslations } from "next-intl/server";
+import { resolve } from "@/i18n/locale";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await resolve();

@@ -1,10 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { RiEyeLine, RiEyeOffLine } from "@remixicon/react";
+import { useTranslations } from "next-intl";
 import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import * as z from "zod";
-
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -26,10 +28,6 @@ import {
   InputGroupAddon,
   InputGroupInput,
 } from "@/components/ui/input-group";
-
-import { RiEyeLine, RiEyeOffLine } from "@remixicon/react";
-import { useTranslations } from "next-intl";
-import { useState } from "react";
 
 const formSchema = z.object({
   password: z.string().trim().min(3, "passwordMin").max(128, "passwordMax"),

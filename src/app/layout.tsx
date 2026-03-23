@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { NextIntlClientProvider } from "next-intl";
 import { JetBrains_Mono, Noto_Sans_Arabic } from "next/font/google";
-import "./globals.css";
-import { resolve } from "@/i18n/locale";
+import { NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
-import { ThemeProvider } from "@/components/theme-provider";
-import { cn } from "@/lib/utils";
 import { Toaster } from "sonner";
+import { cn } from "@/lib/utils";
+import { resolve } from "@/i18n/locale";
+import { ThemeProvider } from "@/components/theme-provider";
+import "./globals.css";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
