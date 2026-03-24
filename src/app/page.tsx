@@ -1,5 +1,11 @@
-import { redirect } from "next/navigation";
+import FloatingParticles from "@/components/portfolio/floating-particles";
+import { ScrollProgress } from "@/components/portfolio/scroll-progress";
 
 export default function Home() {
-  redirect("login");
+  return (
+    <div className="bg-background text-foreground min-h-screen overflow-x-hidden">
+      <ScrollProgress />
+      <FloatingParticles />
+    </div>
+  );
 }
