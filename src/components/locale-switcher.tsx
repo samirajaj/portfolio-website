@@ -1,8 +1,8 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { RiEarthFill } from "@remixicon/react";
-import { useTranslations } from "next-intl";
+import { RiTranslate2 } from "@remixicon/react";
+import { useLocale, useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -15,6 +15,7 @@ const LOCALES = ["en", "ar"] as const;
 
 export function LocaleSwitcher() {
   const t = useTranslations("Locale");
+  const l = useLocale();
   const router = useRouter();
 
   async function setLocale(locale: (typeof LOCALES)[number]) {
@@ -31,16 +32,19 @@ export function LocaleSwitcher() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
-          <RiEarthFill className="h-[1.2rem] w-[1.2rem]" />
+          <RiTranslate2 className="h-[1.2rem] w-[1.2rem]" />
           <span className="sr-only">Switch locale</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        {LOCALES.map((locale) => (
-          <DropdownMenuItem key={locale} onClick={() => setLocale(locale)}>
-            {t(locale)}
-          </DropdownMenuItem>
-        ))}
+        {LOCALES.map(
+          (locale) =>
+            locale !== l && (
+              <DropdownMenuItem key={locale} onClick={() => setLocale(locale)}>
+                {t(locale)}
+              </DropdownMenuItem>
+            ),
+        )}
       </DropdownMenuContent>
     </DropdownMenu>
   );

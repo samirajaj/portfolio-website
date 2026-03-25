@@ -33,7 +33,7 @@ function generateParticles(): Particle[] {
   }));
 }
 
-export default function FloatingParticles() {
+export function FloatingParticles() {
   const { scrollY } = useScroll();
 
   // Generate particles only once
