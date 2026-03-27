@@ -9,10 +9,10 @@ interface SectionConnectorProps {
   className?: string;
 }
 
-const SectionConnector: React.FC<SectionConnectorProps> = ({
+export function SectionConnector({
   variant = "dots",
   className,
-}) => {
+}: SectionConnectorProps) {
   return (
     <ScrollReveal className={cn("flex justify-center py-4", className)}>
       <div className="flex flex-col items-center gap-1.5">
@@ -79,6 +79,4 @@ const SectionConnector: React.FC<SectionConnectorProps> = ({
       </div>
     </ScrollReveal>
   );
-};
-
-export default SectionConnector;
+}

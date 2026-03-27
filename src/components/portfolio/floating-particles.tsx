@@ -37,7 +37,10 @@ export function FloatingParticles() {
   const { scrollY } = useScroll();
 
   // Generate particles only once
-  const particles = useMemo(() => generateParticles(), []);
+  const particles = useMemo(() => {
+    if (typeof window === "undefined") return [];
+    return generateParticles();
+  }, []);
 
   return (
     <div className="pointer-events-none fixed inset-0 z-1 overflow-hidden">
